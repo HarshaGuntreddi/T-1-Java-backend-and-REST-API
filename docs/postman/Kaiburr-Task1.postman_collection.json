@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Kaiburr Task1",
+    "_postman_id": "b1e6f7bb-3a58-4c76-a1fb-9bc8a5ce0000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "PUT upsert task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"t-001\",\n  \"name\": \"Print Hello\",\n  \"owner\": \"Harsha Vardhan Guntreddi\",\n  \"command\": \"echo Hello Kaiburr!\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET all",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/tasks"
+      }
+    },
+    {
+      "name": "GET by id",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/tasks/t-001"
+      }
+    },
+    {
+      "name": "GET search by name",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/tasks/search?q=hello"
+      }
+    },
+    {
+      "name": "PUT execute",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:8080/api/tasks/t-001/execute"
+      }
+    },
+    {
+      "name": "PUT execute with override",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "echo Hello again!"
+        },
+        "url": "http://localhost:8080/api/tasks/t-001/execute"
+      }
+    },
+    {
+      "name": "DELETE task",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/tasks/t-001"
+      }
+    }
+  ]
+}

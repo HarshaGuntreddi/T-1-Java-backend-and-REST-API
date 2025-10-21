@@ -1,0 +1,14 @@
+
+# Maven / Java / IDE
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+.idea/
+.project
+.classpath
+.settings/
+*.iml
+*.log
+**/.DS_Store
+# env
+.env

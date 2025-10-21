@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/kaiburr_tasks}
+
+logging:
+  level:
+    root: INFO
+    com.kaiburr.tasks: DEBUG
